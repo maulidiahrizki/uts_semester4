@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Gaya untuk sidebar */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #343a40;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #495057;
+    }
+    /* Gaya untuk konten utama */
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .welcome {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .line {
+      border-bottom: 1px solid white;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>Menu</h2>
+  <div class="welcome">
+    <p>Hai, <%- user.username %></p> <!-- Ganti dengan nama pengguna dari database -->
+    <p>Selamat datang!</p>
+  </div>
+  <div class="line"></div>
+  <a href="/admin/dashboard">Dashboard Admin</a>
+  <a href="/admin/produk">Produk</a>
+  <a href="/admin/transaksi">Transaksi</a>
+  <a href="/admin/pengguna">Pengguna</a>
+  <a href="/admin/riwayat_pemesanan">Riwayat Pemesanan</a>
+</div>
+
+<div class="content">
+  <h2>Admin Dashboard</h2>
+  <!-- Konten utama akan dimasukkan di sini -->
+</div>
+
+</body>
+</html>

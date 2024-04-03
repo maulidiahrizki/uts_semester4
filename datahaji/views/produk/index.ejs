@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Produk</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5 mb-4">Daftar Produk</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nama Produk</th>
+          <th scope="col">Deskripsi</th>
+          <th scope="col">Harga</th>
+          <th scope="col">Kuota</th>
+          <th scope="col">Tanggal Keberangkatan</th>
+          <th scope="col">Tanggal Kembali</th>
+          <th scope="col">Gambar</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.forEach(product => { %>
+          <tr>
+            <th scope="row"><%= product.produk_id %></th>
+            <td><%= product.nama_produk %></td>
+            <td><%= product.deskripsi %></td>
+            <td><%= product.harga %></td>
+            <td><%= product.kuota %></td>
+            <td><%= product.tanggal_keberangkatan %></td>
+            <td><%= product.tanggal_kembali %></td>
+            <td><img src="<%= product.gambar %>" alt="<%= product.nama_produk %>" style="max-width: 100px;"></td>
+            <td>
+              <a href="/produk/<%= product.produk_id %>/edit" class="btn btn-primary btn-sm">Edit</a>
+              <form action="/produk/<%= product.produk_id %>" method="POST" style="display: inline;">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <a href="/produk/create" class="btn btn-success">Tambah Produk Baru</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function deleteProduct(id) {
+        axios.delete(`/produk/${id}`)
+            .then(response => {
+                console.log(response.data);
+                window.location.reload(); // Reload halaman setelah produk dihapus
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS disesuaikan dengan desain yang Anda berikan */
+        /* Tambahkan CSS sesuai kebutuhan */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            margin-left: 70vh;
+        }
+
+        .form-container {
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+            padding: 50px;
+            width: 400px;
+        }
+
+        .background-image {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px; /* Sesuaikan lebar gambar */
+            height: auto; /* Atur tinggi gambar secara otomatis */
+            z-index: 1;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .form-group {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .form-group:first-child {
+          margin-top: 20px;
+        }
+
+        .form-group label {
+          margin-right: 10px;
+        }
+
+        .material-icons-name {
+          font-size: 24px;
+          margin-right: 10px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #6dabe4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 0;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #4292dc;
+        }
+
+        /* CSS untuk tautan "Lupa Password" dan "Registrasi" */
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: small;
+        }
+
+        .forgot-password a {
+            color: #6dabe4;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .register-link a {
+            color: #6dabe4;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../../../datahaji/public/images/register.png" alt="Background Image" class="background-image">
+        <div class="form-container">
+            <h2 class="form-title">Login</h2>
+            <% if (messages.error) { %>
+                <p style="color: red;"><%= messages.error %></p>
+            <% } %>
+            <form action="/log" method="POST">
+                <div class="form-group">
+                    <label for="email" class="form-label"><i class="fas fa-envelope"></i></label>
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
+                </div>
+                <div class="forgot-password">
+                    <a href="/forgot-password">Lupa Password?</a>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <div class="register-link">
+                Belum punya akun? <a href="/register">Daftar disini</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

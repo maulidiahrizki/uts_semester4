@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS disesuaikan dengan desain yang Anda berikan */
+        /* Tambahkan CSS sesuai kebutuhan */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            margin-left: 70vh;
+        }
+
+        .form-container {
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+            padding: 50px;
+            width: 400px;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .form-group {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px; /* Mengatur jarak antara kolom bawah */
+        }
+
+        /* Atur jarak antara kolom atas */
+        .form-group:first-child {
+          margin-top: 20px;
+        }
+
+        .form-group label {
+          margin-right: 10px; /* Atur jarak antara ikon dan form input */
+        }
+
+        .form-group input,
+        .form-group select {
+          flex: 1; /* Memastikan form input mengisi sisa ruang yang tersedia */
+        }
+
+        /* Atur ukuran dan gaya ikon */
+        .material-icons-name {
+          font-size: 24px;
+          margin-right: 10px; /* Atur jarak antara ikon dan form input */
+        }
+
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #6dabe4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 0;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #4292dc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Sign up</h2>
+            <form action="/saveusers" method="POST">
+                <div class="form-group">
+                    <label for="name" class="form-label"><i class="fas fa-user"></i></label>
+                    <input type="text" name="nama_lengkap" id="name" class="form-control" placeholder="Nama lengkap" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="username" class="form-label"><i class="fas fa-user"></i></label>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label"><i class="fas fa-envelope"></i></label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email anda" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label"><i class="fas fa-lock"></i></label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label"><i class="fas fa-phone"></i></label>
+                    <input type="text" name="nomor_telepon" id="phone" class="form-control" placeholder="Nomor Telepon" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="role" class="form-label"><i class="fas fa-user-shield"></i></label>
+                    <select name="role" id="role" class="form-control">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Produk</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5 mb-4">Edit Produk</h1>
+    <form action="/produk/<%= product.produk_id %>/edit" method="POST">
+      <div class="form-group">
+        <label for="nama_produk">Nama Produk</label>
+        <input type="text" class="form-control" id="nama_produk" name="nama_produk" value="<%= product.nama_produk %>" required>
+      </div>
+      <div class="form-group">
+        <label for="deskripsi">Deskripsi</label>
+        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required><%= product.deskripsi %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="harga">Harga</label>
+        <input type="number" class="form-control" id="harga" name="harga" value="<%= product.harga %>" required>
+      </div>
+      <div class="form-group">
+        <label for="kuota">Kuota</label>
+        <input type="number" class="form-control" id="kuota" name="kuota" value="<%= product.kuota %>" required>
+      </div>
+      <div class="form-group">
+        <label for="tanggal_keberangkatan">Tanggal Keberangkatan</label>
+        <input type="date" class="form-control" id="tanggal_keberangkatan" name="tanggal_keberangkatan" value="<%= product.tanggal_keberangkatan %>" required>
+      </div>
+      <div class="form-group">
+        <label for="tanggal_kembali">Tanggal Kembali</label>
+        <input type="date" class="form-control" id="tanggal_kembali" name="tanggal_kembali" value="<%= product.tanggal_kembali %>" required>
+      </div>
+      <div class="form-group">
+        <label for="gambar">Gambar</label>
+        <input type="text" class="form-control" id="gambar" name="gambar" value="<%= product.gambar %>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
