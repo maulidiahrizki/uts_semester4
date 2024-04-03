@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,8 +39,10 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 200px; /* Sesuaikan lebar gambar */
-            height: auto; /* Atur tinggi gambar secara otomatis */
+            width: 200px;
+            /* Sesuaikan lebar gambar */
+            height: auto;
+            /* Atur tinggi gambar secara otomatis */
             z-index: 1;
         }
 
@@ -52,22 +55,22 @@
         }
 
         .form-group {
-          display: flex;
-          align-items: center;
-          margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
         .form-group:first-child {
-          margin-top: 20px;
+            margin-top: 20px;
         }
 
         .form-group label {
-          margin-right: 10px;
+            margin-right: 10px;
         }
 
         .material-icons-name {
-          font-size: 24px;
-          margin-right: 10px;
+            font-size: 24px;
+            margin-right: 10px;
         }
 
         .form-control {
@@ -121,24 +124,35 @@
         .register-link a:hover {
             text-decoration: underline;
         }
+
+        .background-container {
+            background-image: url("../../public/register.png");
+            /* Add other background properties as needed */
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <img src="../../../datahaji/public/images/register.png" alt="Background Image" class="background-image">
+        <div class="background-container">
+            <!-- Your content here -->
+        </div>
+
         <div class="form-container">
             <h2 class="form-title">Login</h2>
             <% if (messages.error) { %>
-                <p style="color: red;"><%= messages.error %></p>
+            <p style="color: red;"><%= messages.error %></p>
             <% } %>
             <form action="/log" method="POST">
                 <div class="form-group">
                     <label for="email" class="form-label"><i class="fas fa-envelope"></i></label>
-                    <input type="text" id="email" name="email" class="form-control" placeholder="Email" autocomplete="off">
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Email"
+                        autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="password" class="form-label"><i class="fas fa-lock"></i></label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                        autocomplete="off">
                 </div>
                 <div class="forgot-password">
                     <a href="/forgot-password">Lupa Password?</a>
@@ -151,4 +165,5 @@
         </div>
     </div>
 </body>
+
 </html>
